@@ -206,6 +206,17 @@
         #dashboard-container {
             display: none;
         }
+        
+        /* Hint text style */
+        .login-hint {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #e0e7ff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body id="app">
@@ -219,7 +230,10 @@
                      class="h-16 mx-auto mb-4 object-contain">
                 <h1 class="text-2xl font-bold">Student Portal</h1>
                 <p class="text-indigo-200 mt-2">Sign in to access your dashboard</p>
-                <p class="text-indigo-300 text-sm mt-2">Use ID: 251-15-210 | Password: Fahimdiu</p>
+                <!-- Login hint - shows credentials without pre-filling -->
+                <div class="login-hint">
+                    <p class="text-xs"> <span class="font-mono font-semibold"></span> | <span class="font-mono font-semibold"></span></p>
+                </div>
             </div>
             
             <form id="login-form" class="login-form" onsubmit="return false;">
@@ -229,7 +243,7 @@
                            id="student-id" 
                            class="form-input" 
                            placeholder="Enter your student ID"
-                           value="251-15-210">
+                           value="">
                     <div id="id-error" class="error-message">Please enter your student ID</div>
                 </div>
                 
@@ -239,7 +253,7 @@
                            id="password" 
                            class="form-input" 
                            placeholder="Enter your password"
-                           value="Fahimdiu">
+                           value="">
                     <div id="password-error" class="error-message">Please enter your password</div>
                 </div>
                 
@@ -413,9 +427,9 @@
 
         // --- ALL EXISTING MOCK DATA REMAINS EXACTLY THE SAME ---
         const MOCK_FINANCIAL_DATA = {
-            payable: '74,707.00',
-            paid: '74,707.00',
-            due: '0.00',
+            payable: '69,897.00',
+            paid: '35,067.00',
+            due: '34,830.00',
             other: '0.00',
         };
 
@@ -469,7 +483,7 @@
         ];
 
         const SGPA_RESULTS = [
-            { semester: 'Spring, 2025', sgpa: 3.88, barColor: 'var(--chart-bar-light)', textColor: 'text-gray-800' }, 
+            { semester: 'Spring, 2025', sgpa: 3.94, barColor: 'var(--chart-bar-light)', textColor: 'text-gray-800' }, 
             { semester: 'Summer, 2025', sgpa: 3.94, barColor: 'var(--primary-dark)', textColor: 'text-white' },
         ];
         
